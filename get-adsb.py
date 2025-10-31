@@ -95,8 +95,13 @@ def scan():
 # Am I going to put this in a package? Most likely not.
 # Am I going to question Python standards? Also no.
 if __name__ == "__main__":
-	
+
+	startTime = time.time()	
+
 	readConfig()
 	scan()
+
+	duration = time.time() - startTime
+	print(f"Time taken: {duration:.2f} seconds") # Display time taken with 2 digits of precision
 
 

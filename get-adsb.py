@@ -53,7 +53,15 @@ def queryAPI(acType):
 	
 	url = f"{API_BASEURL}/{acType}"
 	print(f"Requesting data from {url}")
-	return ""
+
+	try:
+		response = requests.get(url, timeout = 20)
+		response.raise_for_status()	
+		return response.text
+	
+	except requests.exceptions.RequestException as e:
+		print(f"API request failed for {url}, exception message: {e}")
+		return ""
 
 
 def scan():

@@ -32,7 +32,7 @@ def readConfig():
 
 		API_BASEURL = config.get("API", "baseurl")
 		API_SECONDS_BETWEEN_REQUESTS = config.get("API", "s_between_reqs")
-		PATH_OUTPUT_FOLDER = config.get("PATH", "scan_output_folder")
+		PATH_OUTPUT_FOLDER = config.get("PATH", "raw_scans_dir")
 		
 		tempString = config.get("API", "aircraft_types")	
 		API_AIRCRAFT_TYPES = [item.strip() for item in tempString.split(',') if item.strip()]
